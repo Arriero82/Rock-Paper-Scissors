@@ -1,3 +1,5 @@
+
+//random choice for computer
 function computerPlay(){
     let randomChoice = Math.floor((Math.random()*3));
     const choices = ['rock', 'paper', 'scissors'];
@@ -8,6 +10,8 @@ let computerSelection = computerPlay();
 let playerCount = 0;
 let computerCount = 0;
 
+
+//gives different results for each player and computer choices
 function playRound(playerSelection, computerSelection) {
 
     if(playerSelection=='rock'){
@@ -62,11 +66,11 @@ function game (){
     console.log(computerCount);
 }
 */
-
+//evaluate the winner of the match, first to get to 5 wins. calls playround function.
 function game(){
     while(playerCount<5 && computerCount<5){
-        computerSelection = computerPlay();
         let playerSelection = (prompt('Write your choice rock, paper or scissors')).toLowerCase();
+        computerSelection = computerPlay();
         playRound(playerSelection, computerSelection);
         console.log("Player wins "+playerCount);
         console.log("Computer wins "+computerCount);
